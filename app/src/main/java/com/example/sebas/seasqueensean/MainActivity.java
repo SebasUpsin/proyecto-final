@@ -29,9 +29,8 @@ public class MainActivity extends AppCompatActivity {
         if(this.nombre.isEmpty()) {
             Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
             startActivity(intent);
-        }
-        else {
-            Intent intent = new Intent(MainActivity.this, MenuPrincipalActivity.class);
+        }else {
+            Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             intent.putExtra("nombre",this.nombre);
             intent.putExtra("edad",this.edad);
             startActivity(intent);

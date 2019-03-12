@@ -1,6 +1,7 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.constraint.ConstraintLayout;
@@ -57,6 +58,9 @@ public class RegistroActivity extends AppCompatActivity {
                 editor.putString("edad",txtEdad.getText().toString());
                 editor.commit();
                 finish();
+
+                Intent intent = new Intent(RegistroActivity.this,MainMenuActivity.class);
+                startActivity(intent);
             }
         });
 
