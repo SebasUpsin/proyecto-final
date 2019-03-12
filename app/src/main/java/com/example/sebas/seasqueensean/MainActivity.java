@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String nombre;
     private String edad;
-    private Button btnMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,16 +21,6 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         this.nombre = sharedPreferences.getString("nombre","");
         this.edad = sharedPreferences.getString("edad","");
-        this.btnMenu = (Button) findViewById(R.id.btnMenu);
-        this.btnMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuPrincipalActivity.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-            }
-        });
 
         if(this.nombre.isEmpty()) {
             Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
