@@ -23,10 +23,15 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText txtEdad;
     private ImageButton btnAceptar;
 
+    DatabaseHelper mDatabaseHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
+
+        mDatabaseHelper = new DatabaseHelper(this);
+
         this.layoutAnimado = (ConstraintLayout) findViewById(R.id.layoutanimado);
         this.animacion = (AnimationDrawable) this.layoutAnimado.getBackground();
         this.animacion.setEnterFadeDuration(3000);
@@ -41,6 +46,11 @@ public class RegistroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(txtNombre.getText().toString().isEmpty()||txtEdad.getText().toString().isEmpty())
                     return;
+
+                String newEntry = txtNombre.getText().toString();
+                if (txtNombre.length() != 0) {
+                    AddData(newEntry);
+                }
                 SharedPreferences preferencias = getSharedPreferences("datos", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferencias.edit();
                 editor.putString("nombre",txtNombre.getText().toString());
@@ -50,5 +60,15 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void AddData(String newEntry) {
+        boolean insertData = mDatabaseHelper.addData(newEntry);
+
+        if (insertData) {
+            Toast.makeText(this, "Se ingreso la bd", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "No se ingreso", Toast.LENGTH_SHORT).show();
+        }
     }
 }
