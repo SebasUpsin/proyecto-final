@@ -45,6 +45,7 @@ public class RegistroActivity extends AppCompatActivity {
         this.btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(txtNombre.getText().toString().isEmpty()||txtEdad.getText().toString().isEmpty())
                     return;
 
@@ -57,10 +58,11 @@ public class RegistroActivity extends AppCompatActivity {
                 editor.putString("nombre",txtNombre.getText().toString());
                 editor.putString("edad",txtEdad.getText().toString());
                 editor.commit();
-                finish();
+                //finish();
 
-                Intent intent = new Intent(RegistroActivity.this,MainMenuActivity.class);
+                Intent intent = new Intent(RegistroActivity.this,MainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
