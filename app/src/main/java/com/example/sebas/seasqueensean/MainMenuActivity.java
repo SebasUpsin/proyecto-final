@@ -1,6 +1,7 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -103,6 +104,10 @@ public class MainMenuActivity extends AppCompatActivity
 
         if (id == R.id.nav_progreso) {
             // Handle the camera action
+            Intent intent = new Intent(MainMenuActivity.this,ProgresoActivity.class);
+            intent.putExtra("nombre",this.nombre);
+            intent.putExtra("edad",this.edad);
+            startActivity(intent);
         } else if (id == R.id.nav_puntuacion) {
 
         } else if (id == R.id.nav_salir) {
