@@ -34,6 +34,8 @@ public class MainMenuActivity extends AppCompatActivity
         Bundle datos = getIntent().getExtras();
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");
+
+
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
         this.btnActividad1.setOnClickListener(new View.OnClickListener() {
             @Override
