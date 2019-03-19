@@ -24,6 +24,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".InstruccionesModuloUno" />
         <activity android:name=".ActividadUno"></activity>
+        <activity android:name=".InstruccionesModuloUno" />
+        <activity android:name=".ProgresoActivity"></activity>
     </application>
 
 </manifest>

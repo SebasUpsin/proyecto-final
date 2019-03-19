@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProgresoActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp"
+                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    app:srcCompat="@drawable/user_nav"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/nombreMenuProgreso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    android:text="@string/nav_header_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Numeros y Vocales"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/progress_numerosVocales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spb_currentStateNumber="one"
+                app:spb_maxStateNumber="three"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#feb657"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#feb657"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"
+                android:layout_marginTop="30dp"
+                app:spb_descriptionTopSpaceIncrementer="5dp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Abecedario"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/progress_abecedario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spb_currentStateNumber="two"
+                app:spb_maxStateNumber="three"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#feb657"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#feb657"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"
+                android:layout_marginTop="30dp"
+                app:spb_descriptionTopSpaceIncrementer="5dp"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Palabras Clave"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/progress_palabrasClave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spb_currentStateNumber="three"
+                app:spb_maxStateNumber="three"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#feb657"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#feb657"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_checkStateCompleted="true"
+                android:layout_marginTop="30dp"
+                app:spb_descriptionTopSpaceIncrementer="5dp"
+
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Curso"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <com.kofigyan.stateprogressbar.StateProgressBar
+                android:id="@+id/progress_general"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:spb_maxStateNumber="three"
+                app:spb_stateBackgroundColor="#BDBDBD"
+                app:spb_stateForegroundColor="#feb657"
+                app:spb_stateNumberBackgroundColor="#808080"
+                app:spb_stateNumberForegroundColor="#eeeeee"
+                app:spb_currentStateDescriptionColor="#feb657"
+                app:spb_stateDescriptionColor="#808080"
+                app:spb_animateToCurrentProgressState="true"
+                app:spb_enableAllStatesCompleted="true"
+                android:layout_marginTop="30dp"
+                app:spb_descriptionTopSpaceIncrementer="5dp"
+                />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
