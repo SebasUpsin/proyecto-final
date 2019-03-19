@@ -20,12 +20,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
-        Toast.makeText(this, ""+nombre, Toast.LENGTH_SHORT).show();
-
-        //this.edad = "";
-
         SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
         this.nombre = sharedPreferences.getString("nombre","");
         this.edad = sharedPreferences.getString("edad","");
@@ -44,6 +38,4 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,17 +24,27 @@ public class MainMenuActivity extends AppCompatActivity
 
     private String nombre;
     private String edad;
+    private ImageButton btnActividad1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
-        this.nombre = sharedPreferences.getString("nombre","");
-        this.edad = sharedPreferences.getString("edad","");
-
-        Toast.makeText(this, ""+nombre, Toast.LENGTH_SHORT).show();
+        Bundle datos = getIntent().getExtras();
+        this.nombre = datos.getString("nombre");
+        this.edad = datos.getString("edad");
+        this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
+        this.btnActividad1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
 

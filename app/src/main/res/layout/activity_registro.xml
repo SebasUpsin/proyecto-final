@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textSize="90sp"
+                android:textSize="80sp"
                 android:gravity="bottom"
                 android:textStyle="bold"
                 android:textColor="@color/colornaranja"
@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textSize="70sp"
+                android:textSize="60sp"
                 android:textStyle="bold"
                 android:gravity="bottom"
                 android:textColor="@color/colorrosa"
@@ -40,7 +40,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textColor="@color/colorrosa"
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="40sp"
+            android:textSize="35sp"
             android:textStyle="bold"
             android:textColor="@color/colornegro"
             android:text="@string/bienvenido"
@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="15sp"
+            android:textSize="12sp"
             android:textStyle="bold"
             android:textColor="@color/colornegro"
             android:text="@string/palabras"
@@ -71,13 +71,13 @@
             android:id="@+id/txtEdad"
             android:gravity="center"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_margin="10dp"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:inputType="number"
             android:maxLength="3"
             android:fontFamily="casual"
-            android:padding="9dp"
+            android:padding="5dp"
             android:hint="@string/edadhint"
             android:textColor="@color/colornegro"
             android:background="@drawable/edittext_redondeado"/>
@@ -86,14 +86,40 @@
             android:id="@+id/txtNombre"
             android:gravity="center"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_margin="10dp"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:fontFamily="casual"
-            android:padding="10dp"
+            android:padding="5dp"
+            android:maxLength="15"
             android:hint="@string/nombrehint"
             android:textColor="@color/colornegro"
             android:background="@drawable/edittext_redondeado"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:text="Hombre"
+                android:textSize="25dp"/>
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:gravity="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:text="Mujer"
+                android:textSize="25dp"/>
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/btnAceptar"

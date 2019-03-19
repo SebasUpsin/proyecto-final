@@ -58,9 +58,12 @@ public class RegistroActivity extends AppCompatActivity {
                 editor.putString("nombre",txtNombre.getText().toString());
                 editor.putString("edad",txtEdad.getText().toString());
                 editor.commit();
-                //finish();
 
-                Intent intent = new Intent(RegistroActivity.this,MainActivity.class);
+
+
+                Intent intent = new Intent(RegistroActivity.this, MainMenuActivity.class);
+                intent.putExtra("nombre",txtNombre.getText().toString());
+                intent.putExtra("edad",txtEdad.getText().toString());
                 startActivity(intent);
                 finish();
             }

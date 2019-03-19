@@ -29,9 +29,13 @@
             android:textStyle="bold"
             android:padding="16sp"
             />
-        <Button
-            android:layout_width="wrap_content"
+        <ProgressBar
+            android:id="@+id/barra"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ACEPTAR"/>
+            android:padding="30dp"
+            android:progressTint="@color/colorverde"
+            />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
