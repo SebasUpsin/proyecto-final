@@ -100,7 +100,6 @@
                 android:src="@drawable/carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -158,8 +157,7 @@
             <ImageButton
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
 
@@ -193,7 +191,6 @@
                 android:src="@drawable/carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
-
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -4,12 +4,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class InstruccionesModuloUno extends AppCompatActivity {
 
     private ProgressBar barra;
+    private TextView lblInstrucciones;
     private String nombre;
     private String edad;
+    private int numero;
+    private int x;
+    private boolean running;
+    private Thread hilo=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +41,8 @@ public class InstruccionesModuloUno extends AppCompatActivity {
                     {
                         barra.setProgress(x);
                         sleep(10);
+                        if(running)
+                            x++;
                     }
                 }catch(Exception e)
                 {
