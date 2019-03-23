@@ -527,12 +527,12 @@ public class ActividadUno extends AppCompatActivity {
         });
         this.barra = (ProgressBar) findViewById(R.id.barra);
         this.barra.setProgress(0);
-        this.barra.setMax(600);
-        final Thread hilo = new Thread() {
+        this.barra.setMax(6000);
+        this.hilo = new Thread() {
             @Override
             public void run() {
                 try {
-                    for (int x = 0; x <= 600; x++) {
+                    while (x<6000){
                         barra.setProgress(x);
                         sleep(10);
                         if(running)
@@ -555,6 +555,120 @@ public class ActividadUno extends AppCompatActivity {
                 }
             }
         };
-        hilo.start();
+        this.hilo.start();
+    }
+    private void voltearCarta1(int num){
+        switch (num){
+            case 1:
+                btn1.setBackgroundResource(R.drawable.carta);
+                break;
+            case 2:
+                btn2.setBackgroundResource(R.drawable.carta);
+                break;
+            case 3:
+                btn3.setBackgroundResource(R.drawable.carta);
+                break;
+            case 4:
+                btn4.setBackgroundResource(R.drawable.carta);
+                break;
+            case 5:
+                btn5.setBackgroundResource(R.drawable.carta);
+                break;
+            case 6:
+                btn6.setBackgroundResource(R.drawable.carta);
+                break;
+            case 7:
+                btn7.setBackgroundResource(R.drawable.carta);
+                break;
+            case 8:
+                btn8.setBackgroundResource(R.drawable.carta);
+                break;
+            case 9:
+                btn9.setBackgroundResource(R.drawable.carta);
+                break;
+            case 10:
+                btn10.setBackgroundResource(R.drawable.carta);
+                break;
+            case 11:
+                btn11.setBackgroundResource(R.drawable.carta);
+                break;
+            case 12:
+                btn12.setBackgroundResource(R.drawable.carta);
+                break;
+            case 13:
+                btn13.setBackgroundResource(R.drawable.carta);
+                break;
+            case 14:
+                btn14.setBackgroundResource(R.drawable.carta);
+                break;
+            case 15:
+                btn15.setBackgroundResource(R.drawable.carta);
+                break;
+            case 16:
+                btn16.setBackgroundResource(R.drawable.carta);
+                break;
+        }
+    }
+    private void voltearCarta2(int num){
+        switch (num){
+            case 1:
+                btn1.setBackgroundResource(R.drawable.n1);
+                break;
+            case 2:
+                btn2.setBackgroundResource(R.drawable.i8);
+                break;
+            case 3:
+                btn3.setBackgroundResource(R.drawable.i3);
+                break;
+            case 4:
+                btn4.setBackgroundResource(R.drawable.i3);
+                break;
+            case 5:
+                btn5.setBackgroundResource(R.drawable.i7);
+                break;
+            case 6:
+                btn6.setBackgroundResource(R.drawable.i5);
+                break;
+            case 7:
+                btn7.setBackgroundResource(R.drawable.n5);
+                break;
+            case 8:
+                btn8.setBackgroundResource(R.drawable.n3);
+                break;
+            case 9:
+                btn9.setBackgroundResource(R.drawable.i4);
+                break;
+            case 10:
+                btn10.setBackgroundResource(R.drawable.n8);
+                break;
+            case 11:
+                btn11.setBackgroundResource(R.drawable.n7);
+                break;
+            case 12:
+                btn12.setBackgroundResource(R.drawable.i2);
+                break;
+            case 13:
+                btn13.setBackgroundResource(R.drawable.i6);
+                break;
+            case 14:
+                btn14.setBackgroundResource(R.drawable.n6);
+                break;
+            case 15:
+                btn15.setBackgroundResource(R.drawable.n2);
+                break;
+            case 16:
+                btn16.setBackgroundResource(R.drawable.n4);
+                break;
+        }
+    }
+
+    protected void onStart() {
+        super.onStart();
+        this.running=true;
+    }
+
+    protected void onPause() {
+        super.onPause();
+        this.running=false;
     }
 }
