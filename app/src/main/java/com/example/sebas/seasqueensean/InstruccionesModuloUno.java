@@ -23,40 +23,58 @@ public class InstruccionesModuloUno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instrucciones_modulo_uno);
 
-
         Bundle datos = getIntent().getExtras();
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");
-        this.barra=(ProgressBar) findViewById(R.id.barra);
+        this.numero = datos.getInt("numero");
+        this.barra = (ProgressBar) findViewById(R.id.barra);
+        this.lblInstrucciones = (TextView) findViewById(R.id.lblInstrucciones);
+        switch (this.numero){
+            case 1:
+                break;
+            case 2:
+                this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
+                break;
+            case 3:
+                break;
+        }
         this.barra.setProgress(0);
-        this.barra.setMax(1000);
-        final Thread hilo= new Thread()
+        this.barra.setMax(100);
+        this.x=0;
+        this.hilo = new Thread()
         {
             @Override
             public void run ()
             {
                 try
                 {
-                    for(int x=0;x<=1000;x++)
-                    {
+                    while (x<100){
                         barra.setProgress(x);
                         sleep(10);
                         if(running)
                             x++;
                     }
-                }catch(Exception e)
-                {
-                 e.printStackTrace();
-                }
-                finally{
-                    Intent intent = new Intent(InstruccionesModuloUno.this,ActividadUno.class);
-                    intent.putExtra("nombre",nombre);
-                    intent.putExtra("edad",edad);
+                }catch(Exception e){
+                    e.printStackTrace();
+                }finally {
+                    Intent intent = new Intent(InstruccionesModuloUno.this, ActividadUno.class);
+                    intent.putExtra("nombre", nombre);
+                    intent.putExtra("edad", edad);
                     startActivity(intent);
                     finish();
                 }
             }
         };
-        hilo.start();
+        this.hilo.start();
+    }
+
+    protected void onStart() {
+        super.onStart();
+        this.running=true;
+    }
+
+    protected void onPause() {
+        super.onPause();
+        this.running=false;
     }
 }
