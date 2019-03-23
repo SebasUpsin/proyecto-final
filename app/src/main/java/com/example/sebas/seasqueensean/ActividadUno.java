@@ -541,7 +541,11 @@ public class ActividadUno extends AppCompatActivity {
                             x=6000;
                     }
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    Intent intent = new Intent(ActividadUno.this, MainMenuActivity.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
                 } finally {
                     Intent intent = new Intent(ActividadUno.this, MainMenuActivity.class);
                     intent.putExtra("nombre",nombre);
