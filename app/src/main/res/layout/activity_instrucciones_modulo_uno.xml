@@ -24,8 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="casual"
-            android:textSize="10sp"
-            android:text="El objetivo de este juego es poner a pruba lo aprendido en la pasada lecciòn. El juego consiste en tratar de encontrar cartas que correspondan a la misma palabra en lenguaje de señas y su significado en espeañol, los cuales estàm por partes."
+            android:textSize="16sp"
+            android:text="@string/vacio"
             android:textStyle="bold"
             android:padding="16sp"
             />
