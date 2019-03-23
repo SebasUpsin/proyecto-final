@@ -44,29 +44,29 @@
             android:orientation="horizontal"
             android:gravity="center">
 
-            <ImageButton
+            <Button
+                android:id="@+id/btn1"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:layout_margin="5dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta" />
-            <ImageButton
+                android:background="@drawable/animacion_carta" />
+            <Button
+                android:id="@+id/btn2"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta" />
-            android:layout_margin="5dp"/>
-            <ImageButton
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn3"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/btn4"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
         <LinearLayout
@@ -74,30 +74,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
-            <ImageButton
+            <Button
+                android:id="@+id/btn5"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn6"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn7"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
             <Button
                 android:id="@+id/btn8"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
         <LinearLayout
@@ -105,29 +104,29 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
-            <ImageButton
+            <Button
+                android:id="@+id/btn9"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn10"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn11"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn12"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
         </LinearLayout>
 
@@ -136,25 +135,26 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
-            <ImageButton
+            <Button
+                android:id="@+id/btn13"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn14"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn15"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
-                android:background="@drawable/carta_redondeado"
-                android:src="@drawable/carta"
+                android:background="@drawable/animacion_carta"
                 android:layout_margin="5dp"/>
-            <ImageButton
+            <Button
+                android:id="@+id/btn16"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:background="@drawable/animacion_carta"
