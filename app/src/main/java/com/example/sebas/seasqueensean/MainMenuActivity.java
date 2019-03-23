@@ -45,6 +45,7 @@ public class MainMenuActivity extends AppCompatActivity
                 Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
+                intent.putExtra("numero",2);
                 startActivity(intent);
                 finish();
             }
