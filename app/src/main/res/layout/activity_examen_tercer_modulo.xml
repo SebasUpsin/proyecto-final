@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExamenPrimerModulo">
+    tools:context=".ExamenTercerModulo">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
             >
 
             <TextView
-                android:id="@+id/puntuacion"
+                android:id="@+id/puntuacionModulo3"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,51 +28,51 @@
                 />
 
             <ImageView
-                android:id="@+id/imagenPregunta"
+                android:id="@+id/imagenPreguntaModulo3"
                 android:layout_marginTop="50dp"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:src="@drawable/numero0"
+                android:src="@drawable/hola"
                 android:layout_gravity="center"
                 />
 
             <TextView
-                android:id="@+id/pregunta"
+                android:id="@+id/preguntaModulo3"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="¿A que numero hace alucion la imagen?"
+                android:text="¿A que letra hace alucion la imagen?"
                 android:gravity="center"
                 />
 
             <Button
-                android:background="@drawable/custom_button_two_colors"
                 android:textColor="#ffffff"
-                android:id="@+id/btnOpcion1"
+                android:id="@+id/btnOpcion1Modulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Respuesta 1"
                 android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button_two_colors"
                 />
 
             <Button
-                android:background="@drawable/custom_button_two_colors"
                 android:textColor="#ffffff"
-                android:id="@+id/btnOpcion2"
+                android:id="@+id/btnOpcion2Modulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Respuesta 1"
                 android:layout_marginBottom="10dp"
+                android:background="@drawable/custom_button_two_colors"
                 />
 
             <Button
-                android:background="@drawable/custom_button_two_colors"
                 android:textColor="#ffffff"
-                android:id="@+id/btnOpcion3"
+                android:id="@+id/btnOpcion3Modulo3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Respuesta 1"
+                android:background="@drawable/custom_button_two_colors"
                 />
 
         </LinearLayout>

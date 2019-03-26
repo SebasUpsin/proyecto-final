@@ -26,6 +26,8 @@ public class MainMenuActivity extends AppCompatActivity
     private String edad;
     private ImageButton btnActividad1;
     private ImageButton btnExamen1;
+    private ImageButton btnExamen2;
+    private ImageButton btnExamen3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,10 @@ public class MainMenuActivity extends AppCompatActivity
 
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
         this.btnExamen1 = (ImageButton) findViewById(R.id.btnExamen1);
+        this.btnExamen2 = (ImageButton) findViewById(R.id.btnExamen2);
+        this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
+
+
         this.btnActividad1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +61,26 @@ public class MainMenuActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this,ExamenPrimerModulo.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+            }
+        });
+
+        this.btnExamen2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,ExamenSegundoModulo.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+            }
+        });
+
+        this.btnExamen3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,ExamenTercerModulo.class);
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 startActivity(intent);
