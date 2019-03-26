@@ -26,7 +26,8 @@
         <activity android:name=".ActividadUno" />
         <activity android:name=".InstruccionesModuloUno" />
         <activity android:name=".ProgresoActivity" />
-        <activity android:name=".ExamenPrimerModulo"></activity>
+        <activity android:name=".ExamenPrimerModulo" />
+        <activity android:name=".ActividadDos"></activity>
     </application>
 
 </manifest>
