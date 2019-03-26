@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ExamenPrimerModulo extends AppCompatActivity {
+public class ExamenSegundoModulo extends AppCompatActivity {
 
     private PreguntasExamenPrimerModulo preguntasExamenPrimerModulo = new PreguntasExamenPrimerModulo();
 
@@ -29,21 +29,24 @@ public class ExamenPrimerModulo extends AppCompatActivity {
     private int numeroPregunta = 0;
     private int puntuacion = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_examen_primer_modulo);
+        setContentView(R.layout.activity_examen_segundo_modulo);
 
-        opcion1 = (Button) findViewById(R.id.btnOpcion1);
-        opcion2 = (Button) findViewById(R.id.btnOpcion2);
-        opcion3 = (Button) findViewById(R.id.btnOpcion3);
+        opcion1 = (Button) findViewById(R.id.btnOpcion1Modulo2);
+        opcion2 = (Button) findViewById(R.id.btnOpcion2Modulo2);
+        opcion3 = (Button) findViewById(R.id.btnOpcion3Modulo2);
 
-        pregunta = (TextView) findViewById(R.id.pregunta);
-        puntaje = (TextView) findViewById(R.id.puntuacion);
+        pregunta = (TextView) findViewById(R.id.preguntaModulo2);
+        puntaje = (TextView) findViewById(R.id.puntuacionModulo2);
 
-        anexoPregunta = (ImageView) findViewById(R.id.imagenPregunta);
+        anexoPregunta = (ImageView) findViewById(R.id.imagenPreguntaModulo2);
+
 
         actualizarPreguntas();
+
 
         opcion1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,9 +57,9 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                     puntaje.setText(""+puntuacion);
                     actualizarPreguntas();
 
-                    Toast.makeText(ExamenPrimerModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(ExamenPrimerModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
                     actualizarPreguntas();
                 }
 
@@ -72,9 +75,9 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                     puntaje.setText(""+puntuacion);
                     actualizarPreguntas();
 
-                    Toast.makeText(ExamenPrimerModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(ExamenPrimerModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
                     actualizarPreguntas();
                 }
 
@@ -90,9 +93,9 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                     puntaje.setText(""+puntuacion);
                     actualizarPreguntas();
 
-                    Toast.makeText(ExamenPrimerModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Correcto", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(ExamenPrimerModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ExamenSegundoModulo.this, "Incorrecto", Toast.LENGTH_SHORT).show();
                     actualizarPreguntas();
                 }
 
@@ -122,7 +125,6 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                 dialog.setCanceledOnTouchOutside(false);
                 dialog.show();
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#31B8EE"));
-
             }else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setMessage("Lo siento obtuviste una calificacion de "+puntuacion+" puntos");
@@ -141,33 +143,32 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(Color.parseColor("#ff0000"));
             }
 
-
         }else{
 
             switch (numeroPregunta){
                 case 0:
-                    anexoPregunta.setImageResource(R.drawable.numero0);
+                    anexoPregunta.setImageResource(R.drawable.letaj);
                     break;
                 case 1:
-                    anexoPregunta.setImageResource(R.drawable.letrae);
+                    anexoPregunta.setImageResource(R.drawable.letrah);
                     break;
                 case 2:
-                    anexoPregunta.setImageResource(R.drawable.numero3);
+                    anexoPregunta.setImageResource(R.drawable.letrat);
                     break;
                 case 3:
-                    anexoPregunta.setImageResource(R.drawable.letrau);
+                    anexoPregunta.setImageResource(R.drawable.letrar);
                     break;
                 case 4:
-                    anexoPregunta.setImageResource(R.drawable.numero9);
+                    anexoPregunta.setImageResource(R.drawable.letrax);
                     break;
             }
 
-            pregunta.setText(preguntasExamenPrimerModulo.getPreguntas(numeroPregunta));
-            opcion1.setText(preguntasExamenPrimerModulo.getOpciones(numeroPregunta));
-            opcion2.setText(preguntasExamenPrimerModulo.getOpciones2(numeroPregunta));
-            opcion3.setText(preguntasExamenPrimerModulo.getOpciones3(numeroPregunta));
+            pregunta.setText(preguntasExamenPrimerModulo.getPreguntas2(numeroPregunta));
+            opcion1.setText(preguntasExamenPrimerModulo.getOpcionesModuloDos(numeroPregunta));
+            opcion2.setText(preguntasExamenPrimerModulo.getOpcionesModuloDos2(numeroPregunta));
+            opcion3.setText(preguntasExamenPrimerModulo.getOpcionesModuloDos3(numeroPregunta));
 
-            preguntaTraida = preguntasExamenPrimerModulo.getRespuestaCorrecta(numeroPregunta);
+            preguntaTraida = preguntasExamenPrimerModulo.getRespuestaCorrecta2(numeroPregunta);
             numeroPregunta++;
         }
     }
