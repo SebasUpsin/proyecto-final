@@ -17,6 +17,7 @@ public class InstruccionesModuloUno extends AppCompatActivity {
     private int x;
     private boolean running;
     private Thread hilo=null;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,12 @@ public class InstruccionesModuloUno extends AppCompatActivity {
             case 1:
                 break;
             case 2:
+                this.intent = new Intent(InstruccionesModuloUno.this, ActividadUno.class);
                 this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
                 break;
-            case 3:
+            case 5:
+                this.intent = new Intent(InstruccionesModuloUno.this, ActividadDos.class);
+                this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
                 break;
         }
         this.barra.setProgress(0);
@@ -57,7 +61,7 @@ public class InstruccionesModuloUno extends AppCompatActivity {
                 }catch(Exception e){
                     e.printStackTrace();
                 }finally {
-                    Intent intent = new Intent(InstruccionesModuloUno.this, ActividadUno.class);
+
                     intent.putExtra("nombre", nombre);
                     intent.putExtra("edad", edad);
                     startActivity(intent);
