@@ -3,9 +3,11 @@ package com.example.sebas.seasqueensean;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,8 +18,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.DefinirTabla;
 
 public class MainMenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,10 +35,42 @@ public class MainMenuActivity extends AppCompatActivity
     private ImageButton btnExamen2;
     private ImageButton btnExamen3;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+
+        /* CREACION DE CONSTRUCTOR DE LA CLASE QUE VA A TRAER LOS METODOS DE LA BD*/
+        CreateUsuario source = new CreateUsuario(MainMenuActivity.this);
+
+        /* SE ABRE LA CONEXION DE LA BD*/
+        source.openDataBase();
+
+        /*EL CURSOR VA A TOMAR LO QUE REGRESA LA CONSULTA TRAER Y ASIGANARA LOS INDICES DE
+        * LAS COLUMNAS A LAS VARIABLES COLUM*/
+        Cursor c = source.traer();
+        int colum1=c.getColumnIndex("nombre");
+        int colum2=c.getColumnIndex("edad");
+        int colum3=c.getColumnIndex("genero");
+
+        /*CON ESTO NOS POSICIONAMOS ANTES DE LA PRIMERA FILA PARA EMPEZAR A TRAER LOS DATOS*/
+        c.moveToFirst();
+
+        /*ASIGNO EL CONTENIDO DE LO QUE TIENE EL CURSOR A UNA VARIABLE DEL TIPO NECESARIO Y LE DOY
+        * LA COLUMNA QUE QUIERO QUE ME TRAIGA EL DATO*/
+        String nombreDB = c.getString(colum1);
+        int edadDB = Integer.parseInt(c.getString(colum2));
+        String generoDB = c.getString(colum3);
+
+        /*CHECAMOS QUE SE HAYAN ASIGNADO NUESTROS DATOS*/
+        Log.wtf("NombreDb",nombreDB);
+        Log.wtf("EdadDb",""+edadDB);
+        Log.wtf("GeneroDb",generoDB);
+
+
 
         Bundle datos = getIntent().getExtras();
         this.nombre = datos.getString("nombre");
@@ -113,7 +151,17 @@ public class MainMenuActivity extends AppCompatActivity
 
         View view = navigationView.getHeaderView(0);
         TextView navNombre = (TextView) view.findViewById(R.id.nombreMenu);
-        navNombre.setText(nombre);
+        ImageView navImage = (ImageView)view.findViewById(R.id.imageView);
+        navNombre.setText(nombreDB);
+
+        if (generoDB.equals("Femenino")){
+            navImage.setImageResource(R.drawable.user_nav_girl);
+        }else{
+            navImage.setImageResource(R.drawable.user_nav);
+        }
+
+        /*CERRAMOS LA CONEXION CON LA BASE DE DATOS*/
+        source.close();
     }
 
     @Override

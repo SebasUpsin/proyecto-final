@@ -107,6 +107,7 @@
                 android:text="Hombre"
                 android:textSize="25dp"/>
             <Switch
+                android:id="@+id/swGenero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"

@@ -16,6 +16,12 @@ public class DBHelper extends SQLiteOpenHelper {
             DefinirTabla.Usuario._ID + " INTEGER PRIMARY KEY, " +
             DefinirTabla.Usuario.COLUMN_NAME_NOMBRE + TEXT_TYPE +
             COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_GENERO + TEXT_TYPE +
+            COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_EDAD + INTEGER_TYPE +
+            COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_PROGRESO + INTEGER_TYPE +
+            COMMA_SEP +
             DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOUNO + INTEGER_TYPE +
             COMMA_SEP +
             DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULODOS + INTEGER_TYPE +
