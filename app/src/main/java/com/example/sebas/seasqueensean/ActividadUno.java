@@ -657,9 +657,7 @@ public class ActividadUno extends AppCompatActivity {
                 break;
         }
     }
-
-
-
+    
     protected void onStart() {
         super.onStart();
         this.running=true;

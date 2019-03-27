@@ -31,6 +31,7 @@ public class MainMenuActivity extends AppCompatActivity
     private String nombre;
     private String edad;
     private ImageButton btnActividad1;
+    private ImageButton btnActividad2;
     private ImageButton btnExamen1;
     private ImageButton btnExamen2;
     private ImageButton btnExamen3;
@@ -78,6 +79,7 @@ public class MainMenuActivity extends AppCompatActivity
 
 
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
+        this.btnActividad2= (ImageButton) findViewById(R.id.btnActividad2);
         this.btnExamen1 = (ImageButton) findViewById(R.id.btnExamen1);
         this.btnExamen2 = (ImageButton) findViewById(R.id.btnExamen2);
         this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
@@ -90,6 +92,17 @@ public class MainMenuActivity extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 intent.putExtra("numero",2);
+                startActivity(intent);
+                finish();
+            }
+        });
+        this.btnActividad2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                intent.putExtra("numero",5);
                 startActivity(intent);
                 finish();
             }
