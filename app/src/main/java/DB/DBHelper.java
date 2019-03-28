@@ -22,6 +22,12 @@ public class DBHelper extends SQLiteOpenHelper {
             COMMA_SEP +
             DefinirTabla.Usuario.COLUMN_NAME_PROGRESO + INTEGER_TYPE +
             COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_UNO + INTEGER_TYPE +
+            COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_DOS + INTEGER_TYPE +
+            COMMA_SEP +
+            DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_TRES + INTEGER_TYPE +
+            COMMA_SEP +
             DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOUNO + INTEGER_TYPE +
             COMMA_SEP +
             DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULODOS + INTEGER_TYPE +

@@ -68,6 +68,9 @@ public class RegistroActivity extends AppCompatActivity {
                 }
                 usuario.setEdad(Integer.parseInt(txtEdad.getText().toString()));
                 usuario.setProgreso(0);
+                usuario.setPuntuacionActividadUno(0);
+                usuario.setPuntuacionActividadDos(0);
+                usuario.setPuntuacionActividadTres(0);
                 usuario.setPuntuacionModuloUno(0);
                 usuario.setPuntuacionModuloDos(0);
                 usuario.setPuntuacionModuloTres(0);

@@ -20,6 +20,9 @@ public class CreateUsuario {
       DefinirTabla.Usuario.COLUMN_NAME_GENERO,
       DefinirTabla.Usuario.COLUMN_NAME_EDAD,
       DefinirTabla.Usuario.COLUMN_NAME_PROGRESO,
+      DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_UNO,
+      DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_DOS,
+      DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_TRES,
       DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOUNO,
       DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULODOS,
       DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOTRES,
@@ -40,6 +43,9 @@ public class CreateUsuario {
         values.put(DefinirTabla.Usuario.COLUMN_NAME_GENERO,c.getGenero());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_EDAD,c.getEdad());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PROGRESO,c.getProgreso());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_UNO,c.getPuntuacionActividadUno());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_DOS,c.getPuntuacionActividadDos());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_TRES,c.getPuntuacionActividadTres());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOUNO, c.getPuntuacionModuloUno());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULODOS, c.getPuntuacionModuloDos());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOTRES, c.getPuntuacionModuloTres());
@@ -52,6 +58,9 @@ public class CreateUsuario {
         values.put(DefinirTabla.Usuario.COLUMN_NAME_GENERO,c.getGenero());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_EDAD,c.getEdad());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PROGRESO,c.getProgreso());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_UNO,c.getPuntuacionActividadUno());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_DOS,c.getPuntuacionActividadDos());
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACION_ACTIVIDAD_TRES,c.getPuntuacionActividadTres());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOUNO, c.getPuntuacionModuloUno());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULODOS, c.getPuntuacionModuloDos());
         values.put(DefinirTabla.Usuario.COLUMN_NAME_PUNTUACIONMODULOTRES, c.getPuntuacionModuloTres());
@@ -70,9 +79,12 @@ public class CreateUsuario {
         c.setGenero(cursor.getString(2));
         c.setEdad(cursor.getInt(3));
         c.setProgreso(cursor.getInt(4));
-        c.setPuntuacionModuloUno(cursor.getInt(5));
-        c.setPuntuacionModuloDos(cursor.getInt(6));
-        c.setPuntuacionModuloTres(cursor.getInt(7));
+        c.setPuntuacionActividadUno(cursor.getInt(5));
+        c.setPuntuacionActividadDos(cursor.getInt(6));
+        c.setPuntuacionActividadTres(cursor.getInt(7));
+        c.setPuntuacionModuloUno(cursor.getInt(8));
+        c.setPuntuacionModuloDos(cursor.getInt(9));
+        c.setPuntuacionModuloTres(cursor.getInt(10));
         return c;
     }
 

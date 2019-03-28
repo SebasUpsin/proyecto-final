@@ -27,10 +27,11 @@
         <activity android:name=".InstruccionesModuloUno" />
         <activity android:name=".ProgresoActivity" />
         <activity android:name=".ExamenPrimerModulo" />
-        <activity android:name=".ActividadDos"></activity>
+        <activity android:name=".ActividadDos" />
         <activity android:name=".ExamenPrimerModulo" />
         <activity android:name=".ExamenSegundoModulo" />
-        <activity android:name=".ExamenTercerModulo"></activity>
+        <activity android:name=".ExamenTercerModulo" />
+        <activity android:name=".Puntuaciones"></activity>
     </application>
 
 </manifest>

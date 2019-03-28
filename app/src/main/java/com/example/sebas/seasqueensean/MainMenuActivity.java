@@ -56,6 +56,14 @@ public class MainMenuActivity extends AppCompatActivity
         int colum1=c.getColumnIndex("nombre");
         int colum2=c.getColumnIndex("edad");
         int colum3=c.getColumnIndex("genero");
+        int colum4=c.getColumnIndex("progreso");
+        int colum5=c.getColumnIndex("puntuacionactividaduno");
+        int colum6=c.getColumnIndex("puntuacionactividaddos");
+        int colum7=c.getColumnIndex("puntuacionactividadtres");
+        int colum8=c.getColumnIndex("puntuacionmodulouno");
+        int colum9=c.getColumnIndex("puntuacionmodulodos");
+        int colum10=c.getColumnIndex("puntuacionmodulotres");
+
 
         /*CON ESTO NOS POSICIONAMOS ANTES DE LA PRIMERA FILA PARA EMPEZAR A TRAER LOS DATOS*/
         c.moveToFirst();
@@ -65,11 +73,26 @@ public class MainMenuActivity extends AppCompatActivity
         String nombreDB = c.getString(colum1);
         int edadDB = Integer.parseInt(c.getString(colum2));
         String generoDB = c.getString(colum3);
+        int progresoDB = Integer.parseInt(c.getString(colum4));
+        int puntuacionActividadUnoDB = Integer.parseInt(c.getString(colum5));
+        int puntuacionActividadDosDB = Integer.parseInt(c.getString(colum6));
+        int puntuacionActividadTresDB = Integer.parseInt(c.getString(colum7));
+        int puntuacionModuloUnoDB = Integer.parseInt(c.getString(colum8));
+        int puntuacionModuloDosDB = Integer.parseInt(c.getString(colum9));
+        int puntuacionModuloTresDB = Integer.parseInt(c.getString(colum10));
+
 
         /*CHECAMOS QUE SE HAYAN ASIGNADO NUESTROS DATOS*/
         Log.wtf("NombreDb",nombreDB);
         Log.wtf("EdadDb",""+edadDB);
         Log.wtf("GeneroDb",generoDB);
+        Log.wtf("ProgresoDb",""+progresoDB);
+        Log.wtf("ACT1Db",""+puntuacionActividadUnoDB);
+        Log.wtf("ACT2Db",""+puntuacionActividadDosDB);
+        Log.wtf("ACT3Db",""+puntuacionActividadTresDB);
+        Log.wtf("EXAMEN1Db",""+puntuacionModuloUnoDB);
+        Log.wtf("EXAMEN2Db",""+puntuacionModuloDosDB);
+        Log.wtf("EXAMEN3Db",""+puntuacionModuloTresDB);
 
 
 
@@ -222,7 +245,8 @@ public class MainMenuActivity extends AppCompatActivity
             intent.putExtra("edad",this.edad);
             startActivity(intent);
         } else if (id == R.id.nav_puntuacion) {
-
+            Intent intent = new Intent(MainMenuActivity.this,Puntuaciones.class);
+            startActivity(intent);
         } else if (id == R.id.nav_salir) {
             finish();
         }

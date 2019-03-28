@@ -9,6 +9,9 @@ public class Usuario implements Serializable {
     private String genero;
     private int edad;
     private int progreso;
+    private int puntuacionActividadUno;
+    private int puntuacionActividadDos;
+    private int puntuacionActividadTres;
     private int puntuacionModuloUno;
     private int puntuacionModuloDos;
     private int puntuacionModuloTres;
@@ -19,17 +22,25 @@ public class Usuario implements Serializable {
         this.setGenero("");
         this.setEdad(0);
         this.setProgreso(0);
+        this.setPuntuacionActividadUno(0);
+        this.setPuntuacionActividadDos(0);
+        this.setPuntuacionActividadTres(0);
         this.setPuntuacionModuloUno(0);
         this.setPuntuacionModuloDos(0);
         this.setPuntuacionModuloTres(0);
     }
 
-    public Usuario(int ID, String nombre, String genero, int edad, int progreso, int puntuacionModuloUno, int puntuacionModuloDos, int puntuacionModuloTres){
+    public Usuario(int ID, String nombre, String genero, int edad, int progreso,
+                   int puntuacionActividadUno, int puntuacionActividadDos, int puntuacionActividadTres,
+                   int puntuacionModuloUno, int puntuacionModuloDos, int puntuacionModuloTres){
         this.setID(ID);
         this.setNombre(nombre);
         this.setGenero(genero);
         this.setEdad(edad);
         this.setProgreso(progreso);
+        this.setPuntuacionActividadUno(puntuacionActividadUno);
+        this.setPuntuacionActividadDos(puntuacionActividadDos);
+        this.setPuntuacionActividadTres(puntuacionActividadTres);
         this.setPuntuacionModuloUno(puntuacionModuloUno);
         this.setPuntuacionModuloDos(puntuacionModuloDos);
         this.setPuntuacionModuloTres(puntuacionModuloTres);
@@ -97,5 +108,29 @@ public class Usuario implements Serializable {
 
     public void setProgreso(int progreso) {
         this.progreso = progreso;
+    }
+
+    public int getPuntuacionActividadUno() {
+        return puntuacionActividadUno;
+    }
+
+    public void setPuntuacionActividadUno(int puntuacionActividadUno) {
+        this.puntuacionActividadUno = puntuacionActividadUno;
+    }
+
+    public int getPuntuacionActividadDos() {
+        return puntuacionActividadDos;
+    }
+
+    public void setPuntuacionActividadDos(int puntuacionActividadDos) {
+        this.puntuacionActividadDos = puntuacionActividadDos;
+    }
+
+    public int getPuntuacionActividadTres() {
+        return puntuacionActividadTres;
+    }
+
+    public void setPuntuacionActividadTres(int puntuacionActividadTres) {
+        this.puntuacionActividadTres = puntuacionActividadTres;
     }
 }
