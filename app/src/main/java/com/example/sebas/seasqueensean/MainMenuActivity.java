@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +36,7 @@ public class MainMenuActivity extends AppCompatActivity
     private ImageButton btnExamen1;
     private ImageButton btnExamen2;
     private ImageButton btnExamen3;
+    private ImageButton btnLeccion1;
 
 
 
@@ -100,12 +102,26 @@ public class MainMenuActivity extends AppCompatActivity
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");
 
-
+        this.btnLeccion1=(ImageButton) findViewById(R.id.btnLeccion1);
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
         this.btnActividad2= (ImageButton) findViewById(R.id.btnActividad2);
         this.btnExamen1 = (ImageButton) findViewById(R.id.btnExamen1);
         this.btnExamen2 = (ImageButton) findViewById(R.id.btnExamen2);
         this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
+
+
+
+
+        this.btnLeccion1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,LeccionUnoActivity.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 
         this.btnActividad1.setOnClickListener(new View.OnClickListener() {
