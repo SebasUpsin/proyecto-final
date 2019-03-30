@@ -155,6 +155,7 @@
                 android:id="@+id/progress_general"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:spb_currentStateNumber="two"
                 app:spb_maxStateNumber="three"
                 app:spb_stateBackgroundColor="#BDBDBD"
                 app:spb_stateForegroundColor="#feb657"
@@ -165,6 +166,8 @@
                 app:spb_animateToCurrentProgressState="true"
                 android:layout_marginTop="30dp"
                 app:spb_descriptionTopSpaceIncrementer="5dp"
+                app:spb_checkStateCompleted="true"
+
                 />
 
         </LinearLayout>

@@ -1,12 +1,17 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import DB.CreateUsuario;
+import DB.Usuario;
 
 public class LeccionUnoActivity extends AppCompatActivity {
 
@@ -138,6 +143,23 @@ public class LeccionUnoActivity extends AppCompatActivity {
                 this.lblDescripcion.setText("Con la mano cerrada, se estiran los dedos índice y medio unidos. La palma mira al frente.");
                 break;
             case 16:
+                /*SE ACTUALIZA EL STATUS DEL PROGRESO A 2*/
+                CreateUsuario source = new CreateUsuario(LeccionUnoActivity.this);
+                source.openDataBase();
+                Cursor c = source.traer();
+                int colum4=c.getColumnIndex("progreso");
+                c.moveToFirst();
+                int progresoDB = Integer.parseInt(c.getString(colum4));
+                Log.wtf("ProgresoDb",""+progresoDB);
+
+                if (progresoDB == 0){
+                    Usuario usuario = new Usuario();
+                    usuario.setProgreso(1);
+                    source.updateProgreso(usuario, 1);
+                }
+                source.close();
+                /*SE TERMINA LA ACTUALIZACION*/
+
                 Intent intent = new Intent(LeccionUnoActivity.this, MainMenuActivity.class);
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);

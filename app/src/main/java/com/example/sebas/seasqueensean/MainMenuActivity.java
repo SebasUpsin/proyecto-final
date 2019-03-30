@@ -102,8 +102,8 @@ public class MainMenuActivity extends AppCompatActivity
 
 
         Bundle datos = getIntent().getExtras();
-        this.nombre = datos.getString("nombre");
-        this.edad = datos.getString("edad");
+//        this.nombre = datos.getString("nombre");
+       // this.edad = datos.getString("edad");
 
         this.btnLeccion1=(ImageButton) findViewById(R.id.btnLeccion1);
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);

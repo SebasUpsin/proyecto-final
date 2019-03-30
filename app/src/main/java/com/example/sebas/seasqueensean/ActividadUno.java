@@ -551,7 +551,7 @@ public class ActividadUno extends AppCompatActivity {
                     e.printStackTrace();
                 }finally {
 
-                    /*SE ACTUALIZA EL STATUS DEL PROGRESO A 1*/
+                    /*SE ACTUALIZA EL STATUS DEL PROGRESO A 2*/
                     /* SI PONES ALGUNA PUNTUACION JOSUE ME DICES DONDE PUSISTE LA VARIABLE DE PUNTUACION*/
                     CreateUsuario source = new CreateUsuario(ActividadUno.this);
                     source.openDataBase();
