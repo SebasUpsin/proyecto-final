@@ -53,6 +53,7 @@ public class MainMenuActivity extends AppCompatActivity
         /*EL CURSOR VA A TOMAR LO QUE REGRESA LA CONSULTA TRAER Y ASIGANARA LOS INDICES DE
         * LAS COLUMNAS A LAS VARIABLES COLUM*/
         Cursor c = source.traer();
+        int colum0=c.getColumnIndex("_id");
         int colum1=c.getColumnIndex("nombre");
         int colum2=c.getColumnIndex("edad");
         int colum3=c.getColumnIndex("genero");
@@ -70,6 +71,7 @@ public class MainMenuActivity extends AppCompatActivity
 
         /*ASIGNO EL CONTENIDO DE LO QUE TIENE EL CURSOR A UNA VARIABLE DEL TIPO NECESARIO Y LE DOY
         * LA COLUMNA QUE QUIERO QUE ME TRAIGA EL DATO*/
+        int idDB = Integer.parseInt(c.getString(colum0));
         String nombreDB = c.getString(colum1);
         int edadDB = Integer.parseInt(c.getString(colum2));
         String generoDB = c.getString(colum3);
@@ -83,6 +85,7 @@ public class MainMenuActivity extends AppCompatActivity
 
 
         /*CHECAMOS QUE SE HAYAN ASIGNADO NUESTROS DATOS*/
+        Log.wtf("IdDB",""+idDB);
         Log.wtf("NombreDb",nombreDB);
         Log.wtf("EdadDb",""+edadDB);
         Log.wtf("GeneroDb",generoDB);
@@ -138,6 +141,7 @@ public class MainMenuActivity extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -148,6 +152,7 @@ public class MainMenuActivity extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -158,6 +163,7 @@ public class MainMenuActivity extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -67,6 +67,12 @@ public class CreateUsuario {
         return db.update(DefinirTabla.Usuario.TABLE_NAME, values, DefinirTabla.Usuario._ID + " = " + id, null);
     }
 
+    public long updateProgreso(Usuario c,int id){
+        ContentValues values = new ContentValues();
+        values.put(DefinirTabla.Usuario.COLUMN_NAME_PROGRESO,c.getProgreso());
+        return db.update(DefinirTabla.Usuario.TABLE_NAME, values, DefinirTabla.Usuario._ID + " = " + id, null);
+    }
+
     public int deleteUsuario(long id){
         return db.delete(DefinirTabla.Usuario.TABLE_NAME, DefinirTabla.Usuario._ID + "=?",
                 new String[]{String.valueOf(id)});

@@ -119,21 +119,30 @@ public class ProgresoActivity extends AppCompatActivity {
                 break;
             case 4:
                 stateProgressBar2.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
             case 5:
                 stateProgressBar2.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
             case 6:
                 stateProgressBar2.setAllStatesCompleted(true);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
             case 7:
                 stateProgressBar3.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+                stateProgressBar2.setAllStatesCompleted(true);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
             case 8:
                 stateProgressBar3.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
+                stateProgressBar2.setAllStatesCompleted(true);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
             case 9:
                 stateProgressBar3.setAllStatesCompleted(true);
+                stateProgressBar2.setAllStatesCompleted(true);
+                stateProgressBar.setAllStatesCompleted(true);
                 break;
 
 

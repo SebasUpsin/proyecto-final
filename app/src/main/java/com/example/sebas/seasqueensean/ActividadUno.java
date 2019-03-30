@@ -1,11 +1,18 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.DefinirTabla;
+import DB.Usuario;
 
 public class ActividadUno extends AppCompatActivity {
 
@@ -543,6 +550,26 @@ public class ActividadUno extends AppCompatActivity {
                 } catch (Exception e){
                     e.printStackTrace();
                 }finally {
+
+                    /*SE ACTUALIZA EL STATUS DEL PROGRESO A 1*/
+                    /* SI PONES ALGUNA PUNTUACION JOSUE ME DICES DONDE PUSISTE LA VARIABLE DE PUNTUACION*/
+                    CreateUsuario source = new CreateUsuario(ActividadUno.this);
+                    source.openDataBase();
+                    Cursor c = source.traer();
+                    int colum4=c.getColumnIndex("progreso");
+                    c.moveToFirst();
+                    int progresoDB = Integer.parseInt(c.getString(colum4));
+                    Log.wtf("ProgresoDb",""+progresoDB);
+
+                    if (progresoDB == 1){
+                        Usuario usuario = new Usuario();
+                        usuario.setProgreso(2);
+                        source.updateProgreso(usuario, 1);
+                    }
+                    //Toast.makeText(ActividadUno.this,"Contacto Actualizado!", Toast.LENGTH_SHORT).show();
+                    source.close();
+                    /*SE TERMINA LA ACTUALIZACION*/
+
                     Intent intent = new Intent(ActividadUno.this, MainMenuActivity.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("edad",edad);
