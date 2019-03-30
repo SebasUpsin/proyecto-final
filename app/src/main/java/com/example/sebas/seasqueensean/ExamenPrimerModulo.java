@@ -1,16 +1,22 @@
 package com.example.sebas.seasqueensean;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.Usuario;
 
 public class ExamenPrimerModulo extends AppCompatActivity {
 
@@ -113,6 +119,36 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                 builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        /*SE ACTUALIZA EL STATUS DEL PROGRESO A 3*/
+                        CreateUsuario source = new CreateUsuario(ExamenPrimerModulo.this);
+                        source.openDataBase();
+                        Cursor c = source.traer();
+                        int colum4=c.getColumnIndex("progreso");
+                        int colum8=c.getColumnIndex("puntuacionmodulouno");
+                        c.moveToFirst();
+                        int progresoDB = Integer.parseInt(c.getString(colum4));
+                        int puntuacionModuloUnoDB = Integer.parseInt(c.getString(colum8));
+                        Log.wtf("ProgresoDb",""+progresoDB);
+                        Log.wtf("EXAMEN1Db",""+puntuacionModuloUnoDB);
+
+
+                        if (progresoDB == 2){
+                            Usuario usuario = new Usuario();
+                            usuario.setProgreso(3);
+                            source.updateProgreso(usuario, 1);
+                        }
+
+                        if (puntuacionModuloUnoDB < puntuacion){
+                            Usuario usuario = new Usuario();
+                            usuario.setPuntuacionModuloUno(puntuacion);
+                            source.updateExamen1(usuario,1);
+                        }
+
+                        source.close();
+                        /*SE TERMINA LA ACTUALIZACION*/
+
+                        Intent intent = new Intent(ExamenPrimerModulo.this, MainMenuActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 });
@@ -130,6 +166,30 @@ public class ExamenPrimerModulo extends AppCompatActivity {
                 builder.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+
+                        CreateUsuario source = new CreateUsuario(ExamenPrimerModulo.this);
+
+                        source.openDataBase();
+                        Cursor c = source.traer();
+                        int colum4=c.getColumnIndex("progreso");
+                        int colum8=c.getColumnIndex("puntuacionmodulouno");
+                        c.moveToFirst();
+                        int progresoDB = Integer.parseInt(c.getString(colum4));
+                        int puntuacionModuloUnoDB = Integer.parseInt(c.getString(colum8));
+                        Log.wtf("ProgresoDb",""+progresoDB);
+                        Log.wtf("EXAMEN1Db",""+puntuacionModuloUnoDB);
+
+                        if (puntuacionModuloUnoDB < puntuacion){
+                            Usuario usuario = new Usuario();
+                            usuario.setPuntuacionModuloUno(puntuacion);
+                            source.updateExamen1(usuario,1);
+                        }
+
+
+                        source.close();
+
+                        Intent intent = new Intent(ExamenPrimerModulo.this, MainMenuActivity.class);
+                        startActivity(intent);
                         finish();
                     }
                 });

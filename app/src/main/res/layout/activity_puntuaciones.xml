@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Puntuaciones">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingRight="16dp"
+            android:paddingLeft="16dp"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dp"
+                >
+
+                <ImageView
+                    android:id="@+id/imagenMenuPuntuacion"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    app:srcCompat="@drawable/user_nav"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/nombreMenuPuntuaciones"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    android:text="@string/nav_header_title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Numeros y Vocales"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/act1pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Examen :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/exa1pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Abecedario"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/act2pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Examen :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/exa2pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textAllCaps="false"
+                android:text="Palabras Clave"
+                android:textSize="20dp"
+                android:enabled="false"
+                android:textColor="#ffffff"
+                android:background="@drawable/custom_button_two_colors"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Actividad :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/act3pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Examen :"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+                <TextView
+                    android:id="@+id/exa3pts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100 puntos"
+                    android:textColor="#ff0000"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

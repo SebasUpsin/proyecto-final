@@ -14,7 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.Usuario;
 
 public class RegistroActivity extends AppCompatActivity {
 
@@ -23,6 +27,8 @@ public class RegistroActivity extends AppCompatActivity {
     private EditText txtNombre;
     private EditText txtEdad;
     private ImageButton btnAceptar;
+    private Usuario savedContact;
+    private Switch genero;
 
     DatabaseHelper mDatabaseHelper;
 
@@ -41,6 +47,7 @@ public class RegistroActivity extends AppCompatActivity {
         this.txtNombre = (EditText) findViewById(R.id.txtNombre);
         this.txtEdad = (EditText) findViewById(R.id.txtEdad);
         this.btnAceptar = (ImageButton) findViewById(R.id.btnAceptar);
+        this.genero = (Switch) findViewById(R.id.swGenero);
 
         this.btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,9 +56,33 @@ public class RegistroActivity extends AppCompatActivity {
                 if(txtNombre.getText().toString().isEmpty()||txtEdad.getText().toString().isEmpty())
                     return;
 
-                String newEntry = txtNombre.getText().toString();
+
+                CreateUsuario source = new CreateUsuario(RegistroActivity.this);
+                source.openDataBase();
+                Usuario usuario = new Usuario();
+                usuario.setNombre(txtNombre.getText().toString());
+                if (genero.isChecked()){
+                    usuario.setGenero("Femenino");
+                }else{
+                    usuario.setGenero("Masculino");
+                }
+                usuario.setEdad(Integer.parseInt(txtEdad.getText().toString()));
+                usuario.setProgreso(0);
+                usuario.setPuntuacionActividadUno(0);
+                usuario.setPuntuacionActividadDos(0);
+                usuario.setPuntuacionActividadTres(0);
+                usuario.setPuntuacionModuloUno(0);
+                usuario.setPuntuacionModuloDos(0);
+                usuario.setPuntuacionModuloTres(0);
+
+                source.insertarUsuario(usuario);
+                Toast.makeText(RegistroActivity.this,"Contacto Guardado!",
+                        Toast.LENGTH_SHORT).show();
+                source.close();
+
+                //String newEntry = txtNombre.getText().toString();
                 if (txtNombre.length() != 0) {
-                    AddData(newEntry);
+                   // AddData(newEntry);
                 }
                 SharedPreferences preferencias = getSharedPreferences("datos", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferencias.edit();
@@ -71,7 +102,7 @@ public class RegistroActivity extends AppCompatActivity {
 
     }
 
-    public void AddData(String newEntry) {
+    /*public void AddData(String newEntry) {
         boolean insertData = mDatabaseHelper.addData(newEntry);
 
         if (insertData) {
@@ -79,5 +110,5 @@ public class RegistroActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No se ingreso", Toast.LENGTH_SHORT).show();
         }
-    }
+    }*/
 }
