@@ -338,6 +338,7 @@
                     >
 
                     <ImageButton
+                        android:id="@+id/btnActividad3"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textAllCaps="false"

@@ -1,6 +1,8 @@
 package com.example.sebas.seasqueensean;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +42,10 @@ public class ActividadDos extends AppCompatActivity {
             {"ESCUELA","EMPRESA","MOCHILA","PRIMARIA","PROCLAMAR"}};
     private int palabra;
     private int contador;
+    private int puntos;
+    private int maximo;
     private int x;
+    private int valorX;
     private int j;
     private boolean running;
 
@@ -48,9 +53,9 @@ public class ActividadDos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_dos);
-
+        final SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        this.maximo = sharedPreferences.getInt("maximoActividad2",0);
         Bundle datos = getIntent().getExtras();
-
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");
         this.lblNombre = (TextView) findViewById(R.id.lblNombre);
@@ -86,12 +91,24 @@ public class ActividadDos extends AppCompatActivity {
                         if (running)
                             x++;
                     }
+                    puntos = 6000-valorX;
+                    if(contador==6)
+                        puntos+=1000;
+                    if(puntos>=maximo){
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("maximoActividad2",puntos);
+                        editor.commit();
+                        maximo=puntos;
+                    }
                 } catch (Exception e){
                     e.printStackTrace();
                 }finally {
-                    Intent intent = new Intent(ActividadDos.this, MainMenuActivity.class);
+                    Intent intent = new Intent(ActividadDos.this, Resultados.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("edad",edad);
+                    intent.putExtra("puntos",puntos);
+                    intent.putExtra("maximo",maximo);
+                    intent.putExtra("actividad","ACTIVIDAD MÓDULO 2");
                     startActivity(intent);
                     finish();
                 }
@@ -101,7 +118,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"A");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -109,6 +125,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if (contador == 5){
+                        valorX=x;
                         x = 6000;
                         return;
                     }
@@ -120,7 +137,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"L");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -128,6 +144,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -139,7 +156,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"H");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -147,6 +163,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -158,7 +175,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"R");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -166,6 +182,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -184,6 +201,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -195,7 +213,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"O");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -203,6 +220,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -214,7 +232,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"C");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -222,6 +239,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -233,7 +251,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"I");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -241,6 +258,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -252,7 +270,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"E");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -260,6 +277,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -271,7 +289,6 @@ public class ActividadDos extends AppCompatActivity {
         this.btn10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
             if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
                 txtTexto.setText(txtTexto.getText().toString()+"M");
             if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
@@ -279,6 +296,7 @@ public class ActividadDos extends AppCompatActivity {
                     contador++;
                     txtTexto.setText("");
                     if(contador==5){
+                        valorX=x;
                         x=6000;
                         return;
                     }
@@ -290,38 +308,38 @@ public class ActividadDos extends AppCompatActivity {
         this.btn11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
-                if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
-                    txtTexto.setText(txtTexto.getText().toString()+"P");
-                if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
-                    if(txtTexto.getText().toString().equals(palabras[contador][palabra])) {
-                        contador++;
-                        txtTexto.setText("");
-                        if(contador==5){
-                            x=6000;
-                            return;
-                        }
-                        seleccionarPalabra();
+            if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
+                txtTexto.setText(txtTexto.getText().toString()+"P");
+            if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
+                if(txtTexto.getText().toString().equals(palabras[contador][palabra])) {
+                    contador++;
+                    txtTexto.setText("");
+                    if(contador==5){
+                        valorX=x;
+                        x=6000;
+                        return;
                     }
+                    seleccionarPalabra();
+                }
             }
         });
 
         this.btn12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(ActividadDos.this, "simon", Toast.LENGTH_SHORT).show();
-                if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
-                    txtTexto.setText(txtTexto.getText().toString()+"U");
-                if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
-                    if(txtTexto.getText().toString().equals(palabras[contador][palabra])) {
-                        contador++;
-                        txtTexto.setText("");
-                        if(contador==5){
-                            x=6000;
-                            return;
-                        }
-                        seleccionarPalabra();
+            if(palabras[contador][palabra].length()>txtTexto.getText().toString().length())
+                txtTexto.setText(txtTexto.getText().toString()+"U");
+            if(palabras[contador][palabra].length()==txtTexto.getText().toString().length())
+                if(txtTexto.getText().toString().equals(palabras[contador][palabra])) {
+                    contador++;
+                    txtTexto.setText("");
+                    if(contador==5){
+                        valorX=x;
+                        x=6000;
+                        return;
                     }
+                    seleccionarPalabra();
+                }
             }
         });
 

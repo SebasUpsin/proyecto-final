@@ -41,6 +41,10 @@ public class InstruccionesModuloUno extends AppCompatActivity {
                 this.intent = new Intent(InstruccionesModuloUno.this, ActividadDos.class);
                 this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
                 break;
+            case 8:
+                this.intent = new Intent(InstruccionesModuloUno.this, ActividadTres.class);
+                this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
+                break;
         }
         this.barra.setProgress(0);
         this.barra.setMax(100);

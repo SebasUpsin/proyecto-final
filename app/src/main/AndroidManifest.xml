@@ -22,17 +22,17 @@
             android:name=".MainMenuActivity"
             android:label="@string/title_activity_main_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".InstruccionesModuloUno" />
-        <activity android:name=".ActividadUno" />
-        <activity android:name=".LeccionUnoActivity" />
-        <activity android:name=".ProgresoActivity" />
-        <activity android:name=".ExamenPrimerModulo" />
         <activity android:name=".ActividadDos" />
+        <activity android:name=".ActividadUno" />
         <activity android:name=".ExamenPrimerModulo" />
-        <activity android:name=".ActividadDos"/>
         <activity android:name=".ExamenSegundoModulo" />
         <activity android:name=".ExamenTercerModulo" />
-        <activity android:name=".Puntuaciones"></activity>
+        <activity android:name=".InstruccionesModuloUno" />
+        <activity android:name=".LeccionUnoActivity" />
+        <activity android:name=".ProgresoActivity" />
+        <activity android:name=".Puntuaciones" />
+        <activity android:name=".ActividadTres" />
+        <activity android:name=".Resultados"></activity>
     </application>
 
 </manifest>

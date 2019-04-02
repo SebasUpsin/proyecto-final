@@ -1,6 +1,8 @@
 package com.example.sebas.seasqueensean;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -44,12 +46,17 @@ public class ActividadUno extends AppCompatActivity {
     private Button btn16;
     private int seleccionada1;
     private int seleccionada2;
+    private int valorX=6000;
+    private int maximo;
+    private int puntos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_uno);
 
+        final SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        this.maximo = sharedPreferences.getInt("maximoActividad1",0);
         Bundle datos = getIntent().getExtras();
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");
@@ -547,6 +554,15 @@ public class ActividadUno extends AppCompatActivity {
                         if (running)
                             x++;
                     }
+                    puntos = 6000-x;
+                    if(contador==6)
+                        puntos+=1000;
+                    if(puntos>=maximo){
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putInt("maximoActividad1",puntos);
+                        editor.commit();
+                        maximo=puntos;
+                    }
                 } catch (Exception e){
                     e.printStackTrace();
                 }finally {
@@ -570,9 +586,12 @@ public class ActividadUno extends AppCompatActivity {
                     source.close();
                     /*SE TERMINA LA ACTUALIZACION*/
 
-                    Intent intent = new Intent(ActividadUno.this, MainMenuActivity.class);
+                    Intent intent = new Intent(ActividadUno.this, Resultados.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("edad",edad);
+                    intent.putExtra("puntos",puntos);
+                    intent.putExtra("maximo",maximo);
+                    intent.putExtra("actividad","ACTIVIDAD MÓDULO 1");
                     startActivity(intent);
                     finish();
                 }

@@ -33,6 +33,7 @@ public class MainMenuActivity extends AppCompatActivity
     private String edad;
     private ImageButton btnActividad1;
     private ImageButton btnActividad2;
+    private ImageButton btnActividad3;
     private ImageButton btnExamen1;
     private ImageButton btnExamen2;
     private ImageButton btnExamen3;
@@ -46,6 +47,9 @@ public class MainMenuActivity extends AppCompatActivity
         setContentView(R.layout.activity_main_menu);
 
 
+        SharedPreferences sharedPreferences = getSharedPreferences("datos", Context.MODE_PRIVATE);
+        this.nombre = sharedPreferences.getString("nombre","");
+        this.edad = sharedPreferences.getString("edad","");
         /* CREACION DE CONSTRUCTOR DE LA CLASE QUE VA A TRAER LOS METODOS DE LA BD*/
         CreateUsuario source = new CreateUsuario(MainMenuActivity.this);
 
@@ -108,6 +112,7 @@ public class MainMenuActivity extends AppCompatActivity
         this.btnLeccion1=(ImageButton) findViewById(R.id.btnLeccion1);
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
         this.btnActividad2= (ImageButton) findViewById(R.id.btnActividad2);
+        this.btnActividad3= (ImageButton) findViewById(R.id.btnActividad3);
         this.btnExamen1 = (ImageButton) findViewById(R.id.btnExamen1);
         this.btnExamen2 = (ImageButton) findViewById(R.id.btnExamen2);
         this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
@@ -145,6 +150,18 @@ public class MainMenuActivity extends AppCompatActivity
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 intent.putExtra("numero",5);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        this.btnActividad3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                intent.putExtra("numero",8);
                 startActivity(intent);
                 finish();
             }
