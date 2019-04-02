@@ -3,14 +3,19 @@ package com.example.sebas.seasqueensean;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.Usuario;
 
 public class ActividadDos extends AppCompatActivity {
 
@@ -103,6 +108,46 @@ public class ActividadDos extends AppCompatActivity {
                 } catch (Exception e){
                     e.printStackTrace();
                 }finally {
+
+                    /*SE ACTUALIZA EL STATUS DEL PROGRESO A 2*/
+                    /* SI PONES ALGUNA PUNTUACION JOSUE ME DICES DONDE PUSISTE LA VARIABLE DE PUNTUACION*/
+                    CreateUsuario source = new CreateUsuario(ActividadDos.this);
+                    source.openDataBase();
+                    Cursor c = source.traer();
+                    int colum4=c.getColumnIndex("progreso");
+                    int colum6=c.getColumnIndex("puntuacionactividaddos");
+                    c.moveToFirst();
+                    int progresoDB = Integer.parseInt(c.getString(colum4));
+                    int puntuacionActividadDosDB = Integer.parseInt(c.getString(colum6));
+                    Log.wtf("ProgresoDb",""+progresoDB);
+                    Log.wtf("ACT2Db",""+puntuacionActividadDosDB);
+
+                    if (progresoDB == 4){
+                        Usuario usuario = new Usuario();
+                        usuario.setProgreso(5);
+                        source.updateProgreso(usuario, 1);
+                    }
+
+                    if (puntuacionActividadDosDB < puntos){
+                        Usuario usuario = new Usuario();
+                        usuario.setPuntuacionActividadDos(puntos);
+                        source.updateActividad2(usuario,1);
+                    }
+
+
+                    //Toast.makeText(ActividadUno.this,"Contacto Actualizado!", Toast.LENGTH_SHORT).show();
+                    source.close();
+                    /*SE TERMINA LA ACTUALIZACION*/
+
+
+
+
+
+
+
+
+
+
                     Intent intent = new Intent(ActividadDos.this, Resultados.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("edad",edad);
