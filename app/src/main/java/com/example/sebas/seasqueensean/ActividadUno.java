@@ -573,15 +573,26 @@ public class ActividadUno extends AppCompatActivity {
                     source.openDataBase();
                     Cursor c = source.traer();
                     int colum4=c.getColumnIndex("progreso");
+                    int colum5=c.getColumnIndex("puntuacionactividaduno");
                     c.moveToFirst();
                     int progresoDB = Integer.parseInt(c.getString(colum4));
+                    int puntuacionActividadUnoDB = Integer.parseInt(c.getString(colum5));
                     Log.wtf("ProgresoDb",""+progresoDB);
+                    Log.wtf("ACT1Db",""+puntuacionActividadUnoDB);
 
                     if (progresoDB == 1){
                         Usuario usuario = new Usuario();
                         usuario.setProgreso(2);
                         source.updateProgreso(usuario, 1);
                     }
+
+                    if (puntuacionActividadUnoDB < puntos){
+                        Usuario usuario = new Usuario();
+                        usuario.setPuntuacionActividadUno(puntos);
+                        source.updateActividad1(usuario,1);
+                    }
+
+
                     //Toast.makeText(ActividadUno.this,"Contacto Actualizado!", Toast.LENGTH_SHORT).show();
                     source.close();
                     /*SE TERMINA LA ACTUALIZACION*/

@@ -3,14 +3,19 @@ package com.example.sebas.seasqueensean;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import DB.CreateUsuario;
+import DB.Usuario;
 
 public class ActividadTres extends AppCompatActivity {
     private TextView lblNombre;
@@ -81,6 +86,47 @@ public class ActividadTres extends AppCompatActivity {
                 } catch (Exception e){
                     e.printStackTrace();
                 }finally {
+
+
+                    /*SE ACTUALIZA EL STATUS DEL PROGRESO A 2*/
+                    /* SI PONES ALGUNA PUNTUACION JOSUE ME DICES DONDE PUSISTE LA VARIABLE DE PUNTUACION*/
+                    CreateUsuario source = new CreateUsuario(ActividadTres.this);
+                    source.openDataBase();
+                    Cursor c = source.traer();
+                    int colum4=c.getColumnIndex("progreso");
+                    int colum7=c.getColumnIndex("puntuacionactividadtres");
+                    c.moveToFirst();
+                    int progresoDB = Integer.parseInt(c.getString(colum4));
+                    int puntuacionActividadTresDB = Integer.parseInt(c.getString(colum7));
+                    Log.wtf("ProgresoDb",""+progresoDB);
+                    Log.wtf("ACT3Db",""+puntuacionActividadTresDB);
+
+                    if (progresoDB == 7){
+                        Usuario usuario = new Usuario();
+                        usuario.setProgreso(8);
+                        source.updateProgreso(usuario, 1);
+                    }
+
+                    if (puntuacionActividadTresDB < puntos){
+                        Usuario usuario = new Usuario();
+                        usuario.setPuntuacionActividadTres(puntos);
+                        source.updateActividad3(usuario,1);
+                    }
+
+
+                    //Toast.makeText(ActividadUno.this,"Contacto Actualizado!", Toast.LENGTH_SHORT).show();
+                    source.close();
+                    /*SE TERMINA LA ACTUALIZACION*/
+
+
+
+
+
+
+
+
+
+
                     Intent intent = new Intent(ActividadTres.this, Resultados.class);
                     intent.putExtra("nombre",nombre);
                     intent.putExtra("edad",edad);

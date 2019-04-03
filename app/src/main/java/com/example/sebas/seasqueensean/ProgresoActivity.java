@@ -96,7 +96,7 @@ public class ProgresoActivity extends AppCompatActivity {
         if (progresoDB <= 3){
             stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
         }else if (progresoDB <= 6){
-            stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
+            stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
         }else{
             stateProgressBar4.setAllStatesCompleted(true);
         }
