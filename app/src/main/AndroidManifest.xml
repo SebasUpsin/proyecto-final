@@ -32,7 +32,9 @@
         <activity android:name=".ProgresoActivity" />
         <activity android:name=".Puntuaciones" />
         <activity android:name=".ActividadTres" />
-        <activity android:name=".Resultados"></activity>
+        <activity android:name=".Resultados" />
+        <activity android:name=".LeccionTresActivity" />
+        <activity android:name=".LeccionDosActivity"></activity>
     </application>
 
 </manifest>

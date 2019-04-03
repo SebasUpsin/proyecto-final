@@ -26,8 +26,8 @@ public class LeccionUnoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_leccion_uno);
+
         Bundle datos = getIntent().getExtras();
         this.nombre = datos.getString("nombre");
         this.edad = datos.getString("edad");

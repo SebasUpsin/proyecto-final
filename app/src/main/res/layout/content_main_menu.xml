@@ -178,6 +178,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/btnLeccion2"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textAllCaps="false"
@@ -305,6 +306,7 @@
                     android:orientation="vertical">
 
                     <ImageButton
+                        android:id="@+id/btnLeccion3"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:textAllCaps="false"

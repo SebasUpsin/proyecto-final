@@ -38,6 +38,8 @@ public class MainMenuActivity extends AppCompatActivity
     private ImageButton btnExamen2;
     private ImageButton btnExamen3;
     private ImageButton btnLeccion1;
+    private ImageButton btnLeccion2;
+    private ImageButton btnLeccion3;
 
 
 
@@ -110,6 +112,8 @@ public class MainMenuActivity extends AppCompatActivity
        // this.edad = datos.getString("edad");
 
         this.btnLeccion1=(ImageButton) findViewById(R.id.btnLeccion1);
+        this.btnLeccion2=(ImageButton) findViewById(R.id.btnLeccion2);
+        this.btnLeccion3=(ImageButton) findViewById(R.id.btnLeccion3);
         this.btnActividad1= (ImageButton) findViewById(R.id.btnActividad1);
         this.btnActividad2= (ImageButton) findViewById(R.id.btnActividad2);
         this.btnActividad3= (ImageButton) findViewById(R.id.btnActividad3);
@@ -124,6 +128,26 @@ public class MainMenuActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainMenuActivity.this,LeccionUnoActivity.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+                finish();
+            }
+        });
+        this.btnLeccion2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,LeccionDosActivity.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("edad",edad);
+                startActivity(intent);
+                finish();
+            }
+        });
+        this.btnLeccion3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainMenuActivity.this,LeccionTresActivity.class);
                 intent.putExtra("nombre",nombre);
                 intent.putExtra("edad",edad);
                 startActivity(intent);
