@@ -16,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 import DB.CreateUsuario;
 import DB.Usuario;
 
@@ -36,11 +39,22 @@ public class ExamenTercerModulo extends AppCompatActivity {
     private String preguntaTraida;
     private int numeroPregunta = 0;
     private int puntuacion = 0;
+    private int contador = 0;
+
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examen_tercer_modulo);
+
+        numbers.add(0);
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+
+        Collections.shuffle(numbers);
 
         opcion1 = (Button) findViewById(R.id.btnOpcion1Modulo3);
         opcion2 = (Button) findViewById(R.id.btnOpcion2Modulo3);
@@ -117,7 +131,7 @@ public class ExamenTercerModulo extends AppCompatActivity {
 
     public void actualizarPreguntas(){
 
-        if (numeroPregunta >= 5){
+        if (contador >= 5){
 
 
             if (puntuacion>=80){
@@ -213,6 +227,8 @@ public class ExamenTercerModulo extends AppCompatActivity {
 
         }else{
 
+            numeroPregunta=numbers.get(contador);
+
             switch (numeroPregunta){
                 case 0:
                     anexoPregunta.setImageResource(R.drawable.hola);
@@ -237,7 +253,8 @@ public class ExamenTercerModulo extends AppCompatActivity {
             opcion3.setText(preguntasExamenPrimerModulo.getOpcionesModuloTres3(numeroPregunta));
 
             preguntaTraida = preguntasExamenPrimerModulo.getRespuestaCorrecta3(numeroPregunta);
-            numeroPregunta++;
+            //numeroPregunta++;
+            contador++;
         }
     }
 

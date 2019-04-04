@@ -93,13 +93,13 @@ public class ProgresoActivity extends AppCompatActivity {
 
         Toast.makeText(this, ""+progresoDB, Toast.LENGTH_SHORT).show();
 
-        if (progresoDB <= 3){
+        /*if (progresoDB == 4){
             stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
-        }else if (progresoDB <= 6){
+        }else if (progresoDB == 7){
             stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
-        }else{
+        }else if (progresoDB == 9){
             stateProgressBar4.setAllStatesCompleted(true);
-        }
+        }*/
 
         switch (progresoDB){
             case 0:
@@ -116,33 +116,40 @@ public class ProgresoActivity extends AppCompatActivity {
                 break;
             case 3:
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
                 break;
             case 4:
                 stateProgressBar2.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
                 break;
             case 5:
                 stateProgressBar2.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
                 break;
             case 6:
                 stateProgressBar2.setAllStatesCompleted(true);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
                 break;
             case 7:
                 stateProgressBar3.setCurrentStateNumber(StateProgressBar.StateNumber.TWO);
                 stateProgressBar2.setAllStatesCompleted(true);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
                 break;
             case 8:
                 stateProgressBar3.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
                 stateProgressBar2.setAllStatesCompleted(true);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setCurrentStateNumber(StateProgressBar.StateNumber.THREE);
                 break;
             case 9:
                 stateProgressBar3.setAllStatesCompleted(true);
                 stateProgressBar2.setAllStatesCompleted(true);
                 stateProgressBar.setAllStatesCompleted(true);
+                stateProgressBar4.setAllStatesCompleted(true);
                 break;
 
 
