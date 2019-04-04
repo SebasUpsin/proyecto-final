@@ -232,6 +232,17 @@ public class MainMenuActivity extends AppCompatActivity
                 btnExamen2.setEnabled(true);
                 btnExamen3.setEnabled(true);
             break;
+            case 9:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(true);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(true);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(true);
+            break;
 
         }
 
