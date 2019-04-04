@@ -58,6 +58,15 @@ public class LeccionUnoActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(LeccionUnoActivity.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void cambiarCarta ()
     {
         switch (this.contador)

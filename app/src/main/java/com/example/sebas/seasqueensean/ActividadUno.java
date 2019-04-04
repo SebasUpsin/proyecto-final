@@ -610,6 +610,14 @@ public class ActividadUno extends AppCompatActivity {
         };
         this.hilo.start();
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ActividadUno.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void voltearCarta(int num){
         switch (num){
             case 1:

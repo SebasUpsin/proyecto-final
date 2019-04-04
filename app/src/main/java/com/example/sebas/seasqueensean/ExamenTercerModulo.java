@@ -108,6 +108,13 @@ public class ExamenTercerModulo extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ExamenTercerModulo.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void actualizarPreguntas(){
 
         if (numeroPregunta >= 5){

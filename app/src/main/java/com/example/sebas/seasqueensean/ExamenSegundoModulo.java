@@ -110,6 +110,13 @@ public class ExamenSegundoModulo extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ExamenSegundoModulo.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void actualizarPreguntas(){
 
         if (numeroPregunta >= 5){

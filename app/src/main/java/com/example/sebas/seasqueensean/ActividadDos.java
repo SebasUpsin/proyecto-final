@@ -398,6 +398,13 @@ public class ActividadDos extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ActividadDos.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void seleccionarPalabra(){
         this.palabra= (int) (Math.random()*5);
         this.lblPalabra.setText(this.palabras[this.contador][this.palabra]);

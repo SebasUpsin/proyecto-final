@@ -81,4 +81,11 @@ public class Resultados extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(Resultados.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
