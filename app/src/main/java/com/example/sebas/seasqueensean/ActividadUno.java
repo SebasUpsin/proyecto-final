@@ -714,7 +714,77 @@ public class ActividadUno extends AppCompatActivity {
                 break;
         }
     }
-    
+
+    private void voltearCartas1(int num){
+        switch (num){
+            case 500:
+                btn1.setBackgroundResource(R.drawable.carta);
+                break;
+            case 510:
+                btn2.setBackgroundResource(R.drawable.carta);
+                break;
+            case 520:
+                btn3.setBackgroundResource(R.drawable.carta);
+                break;
+            case 530:
+                btn4.setBackgroundResource(R.drawable.carta);
+                break;
+            case 540:
+                btn5.setBackgroundResource(R.drawable.carta);
+                break;
+            case 550:
+                btn6.setBackgroundResource(R.drawable.carta);
+                break;
+            case 560:
+                btn7.setBackgroundResource(R.drawable.carta);
+                break;
+            case 570:
+                btn8.setBackgroundResource(R.drawable.carta);
+                break;
+            case 580:
+                btn9.setBackgroundResource(R.drawable.carta);
+                break;
+            case 590:
+                btn10.setBackgroundResource(R.drawable.carta);
+                break;
+            case 600:
+                btn11.setBackgroundResource(R.drawable.carta);
+                break;
+            case 610:
+                btn12.setBackgroundResource(R.drawable.carta);
+                break;
+            case 620:
+                btn13.setBackgroundResource(R.drawable.carta);
+                break;
+            case 630:
+                btn14.setBackgroundResource(R.drawable.carta);
+                break;
+            case 640:
+                btn15.setBackgroundResource(R.drawable.carta);
+                break;
+            case 650:
+                btn16.setBackgroundResource(R.drawable.carta);
+                break;
+        }
+    }
+    private void voltearCartas2(){
+        btn1.setBackgroundResource(R.drawable.n1);
+        btn2.setBackgroundResource(R.drawable.i8);
+        btn3.setBackgroundResource(R.drawable.i1);
+        btn4.setBackgroundResource(R.drawable.i3);
+        btn5.setBackgroundResource(R.drawable.i7);
+        btn6.setBackgroundResource(R.drawable.i5);
+        btn7.setBackgroundResource(R.drawable.n5);
+        btn8.setBackgroundResource(R.drawable.n3);
+        btn9.setBackgroundResource(R.drawable.i4);
+        btn10.setBackgroundResource(R.drawable.n8);
+        btn11.setBackgroundResource(R.drawable.n7);
+        btn12.setBackgroundResource(R.drawable.i2);
+        btn13.setBackgroundResource(R.drawable.i6);
+        btn14.setBackgroundResource(R.drawable.n6);
+        btn15.setBackgroundResource(R.drawable.n2);
+        btn16.setBackgroundResource(R.drawable.n4);
+    }
     protected void onStart() {
         super.onStart();
         this.running=true;

@@ -39,15 +39,15 @@ public class InstruccionesModuloUno extends AppCompatActivity {
                 break;
             case 5:
                 this.intent = new Intent(InstruccionesModuloUno.this, ActividadDos.class);
-                this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
+                this.lblInstrucciones.setText("Escribe la palabra impresa en la partes superior... Pero no será tan fácil, ya que deberás hacerlo en el lenguaje de las señas. Debajo tendrás un teclade con algunas letras en el lenguaje de señas");
                 break;
             case 8:
                 this.intent = new Intent(InstruccionesModuloUno.this, ActividadTres.class);
-                this.lblInstrucciones.setText(getString(R.string.instruccionesActividad1));
+                this.lblInstrucciones.setText("Hasta este punto ya debes de saber palabras clave en el lenguaje de señas, así que describe cada una de las palabras de la parte superior con las seeñas de abajo.");
                 break;
         }
         this.barra.setProgress(0);
-        this.barra.setMax(100);
+        this.barra.setMax(1500);
         this.x=0;
         this.hilo = new Thread()
         {
@@ -56,7 +56,7 @@ public class InstruccionesModuloUno extends AppCompatActivity {
             {
                 try
                 {
-                    while (x<100){
+                    while (x<1500){
                         barra.setProgress(x);
                         sleep(10);
                         if(running)
