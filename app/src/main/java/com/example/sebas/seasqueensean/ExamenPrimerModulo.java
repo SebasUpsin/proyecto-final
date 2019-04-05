@@ -15,6 +15,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Random;
+
 import DB.CreateUsuario;
 import DB.Usuario;
 
@@ -34,11 +39,25 @@ public class ExamenPrimerModulo extends AppCompatActivity {
     private String preguntaTraida;
     private int numeroPregunta = 0;
     private int puntuacion = 0;
+    private int contador = 0;
 
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+
+    private int[] preguntasSalidas = new int[5];
+
+    private int x=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_examen_primer_modulo);
+
+        numbers.add(0);
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+
+        Collections.shuffle(numbers);
 
         opcion1 = (Button) findViewById(R.id.btnOpcion1);
         opcion2 = (Button) findViewById(R.id.btnOpcion2);
@@ -107,9 +126,16 @@ public class ExamenPrimerModulo extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ExamenPrimerModulo.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void actualizarPreguntas(){
 
-        if (numeroPregunta >= 5){
+        if (contador >= 5){
 
 
             if (puntuacion>=80){
@@ -204,6 +230,25 @@ public class ExamenPrimerModulo extends AppCompatActivity {
 
         }else{
 
+
+
+            /*Random random = new Random();
+            numeroPregunta=(random.nextInt(6));
+            preguntasSalidas[contador]=numeroPregunta;
+            for (x=0;x<preguntasSalidas.length;x++){
+                   // Log.wtf("long",""+preguntasSalidas.length);
+                    Log.wtf("valorx",""+x);
+                if (preguntasSalidas[x] == numeroPregunta){
+                    numeroPregunta=(random.nextInt(5));
+                    preguntasSalidas[x]=numeroPregunta;
+                    x=0;
+                }
+            }*/
+
+
+
+            numeroPregunta=numbers.get(contador);
+
             switch (numeroPregunta){
                 case 0:
                     anexoPregunta.setImageResource(R.drawable.numero0);
@@ -228,7 +273,8 @@ public class ExamenPrimerModulo extends AppCompatActivity {
             opcion3.setText(preguntasExamenPrimerModulo.getOpciones3(numeroPregunta));
 
             preguntaTraida = preguntasExamenPrimerModulo.getRespuestaCorrecta(numeroPregunta);
-            numeroPregunta++;
+            //numeroPregunta++;
+            contador++;
         }
     }
 }

@@ -122,6 +122,129 @@ public class MainMenuActivity extends AppCompatActivity
         this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
 
 
+        btnLeccion1.setEnabled(false);
+        btnLeccion2.setEnabled(false);
+        btnLeccion3.setEnabled(false);
+        btnActividad1.setEnabled(false);
+        btnActividad2.setEnabled(false);
+        btnActividad3.setEnabled(false);
+        btnExamen1.setEnabled(false);
+        btnExamen2.setEnabled(false);
+        btnExamen3.setEnabled(false);
+
+        switch (progresoDB){
+            case 0:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(false);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(false);
+                btnActividad2.setEnabled(false);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(false);
+                btnExamen2.setEnabled(false);
+                btnExamen3.setEnabled(false);
+            break;
+            case 1:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(false);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(false);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(false);
+                btnExamen2.setEnabled(false);
+                btnExamen3.setEnabled(false);
+            break;
+            case 2:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(false);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(false);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(false);
+                btnExamen3.setEnabled(false);
+            break;
+            case 3:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(false);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(false);
+                btnExamen3.setEnabled(false);
+            break;
+            case 4:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(false);
+                btnExamen3.setEnabled(false);
+            break;
+            case 5:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(false);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(false);
+            break;
+            case 6:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(true);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(false);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(false);
+            break;
+            case 7:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(true);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(true);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(false);
+            break;
+            case 8:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(true);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(true);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(true);
+            break;
+            case 9:
+                btnLeccion1.setEnabled(true);
+                btnLeccion2.setEnabled(true);
+                btnLeccion3.setEnabled(true);
+                btnActividad1.setEnabled(true);
+                btnActividad2.setEnabled(true);
+                btnActividad3.setEnabled(true);
+                btnExamen1.setEnabled(true);
+                btnExamen2.setEnabled(true);
+                btnExamen3.setEnabled(true);
+            break;
+
+        }
 
 
         this.btnLeccion1.setOnClickListener(new View.OnClickListener() {

@@ -76,6 +76,13 @@ public class InstruccionesModuloUno extends AppCompatActivity {
         this.hilo.start();
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(InstruccionesModuloUno.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     protected void onStart() {
         super.onStart();
         this.running=true;

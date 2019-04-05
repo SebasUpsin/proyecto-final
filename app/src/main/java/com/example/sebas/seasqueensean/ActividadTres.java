@@ -222,6 +222,13 @@ public class ActividadTres extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(ActividadTres.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private  void seleccionarFrase(){
         this.lblFrase.setText(this.frases[this.contador]);
         this.txtFrase.setText("");

@@ -61,6 +61,14 @@ public class LeccionTresActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(LeccionTresActivity.this, MainMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void cambiarCarta ()
     {
         switch (this.contador)
