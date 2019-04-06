@@ -17,7 +17,7 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-    <string name="instruccionesActividad1">El objetivo de este juego es poner a pruba lo aprendido en la pasada lecciòn.
-        El juego consiste en tratar de encontrar cartas que correspondan a la misma palabra en lenguaje de señas y su significado en espeañol,
-        los cuales estàm por partes.</string>
+    <string name="instruccionesActividad1">El objetivo de este juego es poner a prueba lo aprendido en la pasada lecciòn.
+        El juego consiste en tratar de encontrar cartas que correspondan a la misma palabra en lenguaje de señas y su significado en español,
+        los cuales están por partes.</string>
 </resources>
