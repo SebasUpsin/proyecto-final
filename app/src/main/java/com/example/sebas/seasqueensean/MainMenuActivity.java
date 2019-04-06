@@ -83,7 +83,7 @@ public class MainMenuActivity extends AppCompatActivity
         String nombreDB = c.getString(colum1);
         int edadDB = Integer.parseInt(c.getString(colum2));
         String generoDB = c.getString(colum3);
-        int progresoDB = Integer.parseInt(c.getString(colum4));
+        final int progresoDB = Integer.parseInt(c.getString(colum4));
         int puntuacionActividadUnoDB = Integer.parseInt(c.getString(colum5));
         int puntuacionActividadDosDB = Integer.parseInt(c.getString(colum6));
         int puntuacionActividadTresDB = Integer.parseInt(c.getString(colum7));
@@ -122,7 +122,7 @@ public class MainMenuActivity extends AppCompatActivity
         this.btnExamen3 = (ImageButton) findViewById(R.id.btnExamen3);
 
 
-        btnLeccion1.setEnabled(false);
+        /*btnLeccion1.setEnabled(false);
         btnLeccion2.setEnabled(false);
         btnLeccion3.setEnabled(false);
         btnActividad1.setEnabled(false);
@@ -244,7 +244,7 @@ public class MainMenuActivity extends AppCompatActivity
                 btnExamen3.setEnabled(true);
             break;
 
-        }
+        }*/
 
 
         this.btnLeccion1.setOnClickListener(new View.OnClickListener() {
@@ -260,21 +260,30 @@ public class MainMenuActivity extends AppCompatActivity
         this.btnLeccion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,LeccionDosActivity.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-                finish();
+                if (progresoDB < 3){
+                    Toast.makeText(MainMenuActivity.this, "Debe completar el examen anterior para acceder a la leccion", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,LeccionDosActivity.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
         this.btnLeccion3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,LeccionTresActivity.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 6){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar el examen anterior para acceder a la leccion", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,LeccionTresActivity.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
@@ -282,68 +291,100 @@ public class MainMenuActivity extends AppCompatActivity
         this.btnActividad1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                intent.putExtra("numero",2);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 1){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la leccion anterior para acceder a la actividad", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    intent.putExtra("numero",2);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
         this.btnActividad2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                intent.putExtra("numero",5);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 4){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la leccion anterior para acceder a la actividad", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    intent.putExtra("numero",5);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
         this.btnActividad3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                intent.putExtra("numero",8);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 7){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la leccion anterior para acceder a la actividad", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,InstruccionesModuloUno.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    intent.putExtra("numero",8);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
         this.btnExamen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,ExamenPrimerModulo.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 2){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la actividad anterior para acceder al examen", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,ExamenPrimerModulo.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         });
 
         this.btnExamen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,ExamenSegundoModulo.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 5){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la actividad anterior para acceder al examen", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,ExamenSegundoModulo.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
         this.btnExamen3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainMenuActivity.this,ExamenTercerModulo.class);
-                intent.putExtra("nombre",nombre);
-                intent.putExtra("edad",edad);
-                startActivity(intent);
-                finish();
+
+                if (progresoDB < 8){
+                    Toast.makeText(MainMenuActivity.this, "Debes terminar la actividad anterior para acceder al examen", Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(MainMenuActivity.this,ExamenTercerModulo.class);
+                    intent.putExtra("nombre",nombre);
+                    intent.putExtra("edad",edad);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 
