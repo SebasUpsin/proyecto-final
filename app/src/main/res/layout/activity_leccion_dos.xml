@@ -46,7 +46,7 @@
                 android:layout_height="60dp"
                 android:layout_margin="5dp"
                 android:text="ANTERIOR"
-                android:background="@drawable/custom_button_circular"
+                android:background="@drawable/custom_button_circular_modulo_dos"
                 />
             <Button
                 android:id="@+id/btnSiguiente"
@@ -54,7 +54,7 @@
                 android:layout_height="60dp"
                 android:text="SIGUIENTE"
                 android:layout_margin="5dp"
-                android:background="@drawable/custom_button_circular"
+                android:background="@drawable/custom_button_circular_modulo_dos"
                 />
         </LinearLayout>
 
